@@ -13,8 +13,15 @@ script = ExtResource("1_ttalb")
 script = ExtResource("1_6pmjc")
 p_path = "res://json/picture.json"
 
+[node name="loadJson" type="Node" parent="loadJson"]
+script = ExtResource("1_6pmjc")
+p_path = "res://json/picture.json"
+
 [node name="create_pictures_data" type="Node" parent="."]
 script = ExtResource("3_lptdg")
 
+[connection signal="ready_json" from="loadJson" to="." method="_on_load_json_ready_json"]
 [connection signal="ready_json" from="loadJson" to="create_pictures_data" method="_on_load_json_ready_json"]
+[connection signal="ready_json" from="loadJson/loadJson" to="." method="_on_load_json_ready_json"]
+[connection signal="ready_json" from="loadJson/loadJson" to="create_pictures_data" method="_on_load_json_ready_json"]
 [connection signal="pictures_are_ready" from="create_pictures_data" to="." method="_on_create_pictures_data_pictures_are_ready"]

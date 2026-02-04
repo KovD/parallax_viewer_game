@@ -1,12 +1,15 @@
 {
 	"pictures":[
 		{
-			"path":"res://temp_pictures/bg.png",
+			"path":"res://temp_pictures/bg.jpg",
 			"depth":1
 		},
 		{
-			"path":"res://temp_pictures/circle.png",
-			"depth":2
+			"path":"res://temp_pictures/CV_kovD.jpg",
+			"depth":10
 		}
-	]
+	],
+	"is_three_d":true,
+	"speed":10,
+	"resize":1.5
 }
