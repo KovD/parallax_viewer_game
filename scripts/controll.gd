@@ -7,10 +7,8 @@ func _ready() -> void:
 	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
 
 
-func _on_load_json_ready_json() -> void:
-	print("sex")
+func _on_create_pictures_pictures_are_ready(picture: parralax_picture) -> void:
+	label.text = String(picture.parralax_list[0].path)

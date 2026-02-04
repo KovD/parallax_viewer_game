@@ -1,10 +1,10 @@
 extends Node
 
-@export var path = ""
-signal ready_json
+@export var p_path = ""
+signal ready_json(json_data)
 
 func _ready() -> void:
-	load_json(path)
+	load_json(p_path)
 
 func load_json(path:String):
 	if not FileAccess.file_exists(path):
@@ -13,6 +13,6 @@ func load_json(path:String):
 		
 	var file = FileAccess.open(path, FileAccess.READ)
 	var content = file.get_as_text()
-	ready_json.emit()
-	return JSON.parse_string(content)
+	ready_json.emit(JSON.parse_string(content))
+	return
 	
