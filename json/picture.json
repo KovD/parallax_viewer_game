@@ -5,12 +5,8 @@
 			"depth":1
 		},
 		{
-			"path":"res://temp_pictures/bg.png",
+			"path":"res://temp_pictures/circle.png",
 			"depth":2
-		},
-		{
-			"path":"res://temp_pictures/bg.png",
-			"depth":3
 		}
 	]
 }

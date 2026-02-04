@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl75br24yvml0"]
+
+[ext_resource type="Script" uid="uid://cbgfrngogjeu3" path="res://scripts/parralax_effect_creator.gd" id="1_801pv"]
+
+[node name="ParralaxEffect" type="Node2D"]
+script = ExtResource("1_801pv")
