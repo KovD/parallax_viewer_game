@@ -6,18 +6,20 @@ var PictureData: parralax_picture
 var speed
 var original
 var center
+var height
 var shared_vector: Vector2 = Vector2.ZERO
 var use_three_d:bool
 
 var slice_scene = preload("res://scenes/paralax_slice.tscn")
 var slice_3d_scene = preload("res://scenes/paralax_slice_3d.tscn")
 
-func setup_paralax(picture_data: parralax_picture, camera_size: Vector2, resize_number:float = 1.1, paralax_speed: int = 100, threeD:bool = false) -> void:
+func setup_paralax(picture_data: parralax_picture, heightmap:String, camera_size: Vector2, resize_number:float = 1.1, paralax_speed: int = 100, threeD:bool = false) -> void:
     resize = resize_number
     PictureData = picture_data
     original = camera_size
     speed = paralax_speed
     use_three_d = threeD
+    height = heightmap
     
     
     center = Vector2(camera_size[0] / 2, camera_size[1]/2)
@@ -38,7 +40,7 @@ func _ready() -> void:
     else:
         for pictures in PictureData.parralax_list:
             var instance = slice_3d_scene.instantiate()
-            instance.setup_slice(pictures.path, pictures.depth, speed, ref_center) 
+            instance.setup_slice(pictures.path, height, pictures.depth, speed, ref_center) 
             add_child(instance)
 
 func _process(delta: float) -> void:
